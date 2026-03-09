@@ -83,8 +83,10 @@ O próximo passo será colar o código C acima, pressionar `Ctrl + S` para salva
 
 O arquivo "hello.c" está pronto para ser compilado, através do comando GCC:
   - `gcc hello.c -o hello`
+  
 Explicação: O comando compilará o código fonte escrito em C e transformará o nome do executável em "hello". Caso não houvesse a instrução final "-o hello", o nome do arquivo gerado seria "a.out" - Nome originado de assembler output.
 
 Por fim, apenas digite o nome do arquivo executável para rodar diretamente no bash:
 - `./hello`
+
 O `./` se vê necessário, pois sistemas baseados em UNIX não procuram no diretório atual automaticamente.
