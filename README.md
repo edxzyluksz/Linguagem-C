@@ -90,3 +90,25 @@ Por fim, apenas digite o nome do arquivo executável para rodar diretamente no b
 - `./hello`
 
 O `./` se vê necessário, pois sistemas baseados em UNIX não procuram no diretório atual automaticamente.
+
+## 💫 Fatos interessantes
+
+O comando `else if` em C não é exatamente uma única instrução para a máquina. Ele se dá através de **junção** das intruções if (se) e else (senão). Essa combinação funciona por conta de que, se uma condicional possuir somente um argumento (`;`), não é necessário inserir as chaves `{}` para executar o código.
+"
+Dado este fato, porém, existe um bug conhecido como "dangling else", traduzido como "else pendurado". Por exemplo:
+
+``` c
+#include <stdio.h>
+int a = 5, b = 4
+if (a >= 5)
+  if (a == b)
+    printf("Valores iguais");
+else
+  printf("'a' é menor que 5");
+```
+
+Perceba que nenhum laço acima possui as chaves para separar os argumentos. Por conta disso, o else não respeitará a indentação do programador e executará o bloco `else` somente se 'a' e 'b' forem diferentes, não se 'a' for menor que 5.
+
+Resumidamente:
+- Neste exemplo, o `else` está associado ao `if (a == b)`, não ao `if (a >= 5).`
+- Ou seja, a indentação que você vê no código enganaria o programador, mas não o compilador.
